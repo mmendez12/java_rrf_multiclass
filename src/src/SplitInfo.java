@@ -40,7 +40,7 @@ public class SplitInfo {
     }   
 
     /**
-     * Try to find the best split in a row.
+     * find the best split in a row.
      * 
      * @param ile_l index label expression
      * @param row
@@ -55,8 +55,9 @@ public class SplitInfo {
         count_label_left = new LinkedHashMap<String, Integer>();
         count_label_right = new LinkedHashMap<String, Integer>();
         HashMap<String, MutableInt> label_count = new HashMap<String, MutableInt>();
-        Collections.shuffle(ile_l);
+//        Collections.shuffle(ile_l);
         Collections.sort(ile_l);
+//        System.out.println(ile_l);
 
         // get number of label A and B
         for (Index_Label_Expression ile: ile_l)
