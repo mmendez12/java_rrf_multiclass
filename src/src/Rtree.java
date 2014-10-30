@@ -33,16 +33,21 @@ public class Rtree extends Tree {
 
         TreeInfo.bootstrap_index_label = bootstrap(Data.sil);
         TreeInfo.oob_index = new ArrayList<Integer>();
+        
+        List<Integer> bootstrap_indexes = new ArrayList<Integer>();
 
         for (Index_Label bootstrap_index_label : TreeInfo.bootstrap_index_label) {
             TreeInfo.tree_index_label.add(bootstrap_index_label);
+            bootstrap_indexes.add(bootstrap_index_label.index);
         }
 
         // fill oob_index
         for (int i = 0; i < Data.sil.size(); i++) {
             TreeInfo.oob_index.add(i);
         }
-        TreeInfo.oob_index.removeAll(TreeInfo.tree_index_label);
+
+        
+        TreeInfo.oob_index.removeAll(bootstrap_indexes);
         TreeInfo.isRoot = true;
 
 

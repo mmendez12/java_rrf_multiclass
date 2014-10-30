@@ -55,7 +55,7 @@ public class SplitInfo {
         count_label_left = new LinkedHashMap<String, Integer>();
         count_label_right = new LinkedHashMap<String, Integer>();
         HashMap<String, MutableInt> label_count = new HashMap<String, MutableInt>();
-//        Collections.shuffle(ile_l);
+        Collections.shuffle(ile_l);
         Collections.sort(ile_l);
 //        System.out.println(ile_l);
 
@@ -109,7 +109,7 @@ public class SplitInfo {
             }
         }
 
-        cut_off_val = ile_l.get(gain_idx).expression;
+        cut_off_val = (ile_l.get(gain_idx).expression + ile_l.get(gain_idx +1).expression) / 2;
 
         for (int i = 0; i <= gain_idx; i++)
             left_index.add(ile_l.get(i).getIndex_Label());

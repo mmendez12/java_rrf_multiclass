@@ -135,6 +135,13 @@ public abstract class Tree {
         }
 
         Collections.shuffle(il);
+        
+//        List<Index_Label> il = new ArrayList<Index_Label>();
+//        
+//        for (int i = 0; i < 9; i++) {
+//            il.add(new Index_Label(sil.index.get(i)-1, sil.label.get(i)));
+//            
+//        }
 
         return il;
 

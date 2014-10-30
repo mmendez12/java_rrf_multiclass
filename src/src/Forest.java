@@ -31,21 +31,16 @@ public class Forest {
 
             // find perfect rows
             for (int i = 0; i < Data.annotations.length; i++) {
-//                if (Data.annotations[i].equals("chr12:96830136:96830532:-:chr12:96830136-96830532")) {
-//                    System.out.println("");
-//                }
+
                 List<Index_Label_Expression> ile = new LinkedList<Index_Label_Expression>();
                 for (int j = 0; j < Data.sil.size(); j++) {
-//                    if(Data.m[i][j] == 0){
-//                        System.out.println("");
-//                    }
+
                     ile.add(new Index_Label_Expression(j, Data.sil.label.get(j), Data.m[i][j]));
                 }
 
                 SplitInfo si = new SplitInfo(ile, i);
                 if (si.getGain() == si.getGini()) {
                     Conf.to_exclude.add(i);
-//                    System.out.println(Data.annotations[i]);
                 }
             }
             System.out.println("perfect rows: " + Conf.to_exclude.size());
